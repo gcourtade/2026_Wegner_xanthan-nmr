@@ -14,7 +14,7 @@ Citation:
 
 | Sample | Expno | Experiment description |
 |------------------|------------|-----------------------|
-| **delta_gumFG** | `2` | 1D 1H  
+| **delta_gumFG** | `2` | 1D 1H  (`noesygppr1d`) |
 |                  | `3` | 13C HSQC (`hsqcedetgpsisp2.3`) |
 | **delta_gumFGL**| `2` | 1D 1H (`noesygppr1d`) |
 |                  | `3` | 13C HSQC (`hsqcedetgpsisp2.3`) |
