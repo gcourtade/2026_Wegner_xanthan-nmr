@@ -1,0 +1,44 @@
+##TITLE= Audit trail, TopSpin 4.0.7
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= juliaweg
+$$ C:\Users\juliaweg\OneDrive - NTNU\Desktop\PhD\NMR\juliaweg(1)\800/deltaL/3/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2025-06-13T01:00:01.820+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<cprserver>,<TopSpin 4.4.1>,
+      <changed parameter F2 O1 to 3759.53>)
+(   2,<2025-06-12T23:00:43.721+0000>,<DESKTOP-GBO6KH6\nmrsu>,<DESKTOP-GBO6KH6>,<go4>,<TopSpin 4.4.1>,
+      <acquisition in progress>)
+(   3,<2025-06-13T00:02:21.806+0000>,<DESKTOP-GBO6KH6\nmrsu>,<DESKTOP-GBO6KH6>,<go4>,<TopSpin 4.4.1>,
+      <created by zg on 'Avance' (DESKTOP-GBO6KH6) by user 'DESKTOP-GBO6KH6\nmrsu'
+       on data set with UUID '114e6bec-47e1-11f0-8fb6-0030d63cb8b4'
+       started at 2025-06-12 23:00:43.721 +0000, POWCHK enabled, PULCHK disabled,
+       completed at 2025-06-13 00:02:21.805 +0000
+       configuration hash MD5:
+       5A 4B 71 6C C0 FA 7B 52 3B E7 A0 A5 3F E9 5A 7A
+       double data hash MD5: 2K * 400
+       75 94 3C BD 8C 5C 82 46 7B 84 89 96 1D 1A 2D B6>)
+(   4,<2025-06-13T02:01:46.275+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<xwish3>,<TopSpin 4.4.1>,
+      <ICON-NMR User ID: juliaweg
+       double data hash MD5: 2K * 400
+       75 94 3C BD 8C 5C 82 46 7B 84 89 96 1D 1A 2D B6>)
+(   5,<2025-06-18 10:30:49.937 +0200>,<WIN-NTNU-NO\juliaweg>,<NTNU31234>,<proc2d>,<TopSpin 4.0.7>,
+      <Start of raw data processing
+       xfb F2: SI = 4K WDW = 4 SSB = 2 FT_mod = 6 PKNL = 1 PHC0 = 76.55 PHC1 = 0 F1: SI = 1K ME_mod = 2 NCOEF = 32 WDW = 4 SSB = 2 FT_mod = 6 FCOR = 0.5 PHC0 = 0 PHC1 = 0
+       data hash MD5: 4K * 1K
+       08 12 A6 31 F6 C6 9A 7F B5 58 0A 8C EB A4 62 D7>)
+(   6,<2025-06-18 10:30:51.346 +0200>,<WIN-NTNU-NO\juliaweg>,<NTNU31234>,<apkm>,<TopSpin 4.0.7>,
+      <apkm 
+       data hash MD5: 4K * 1K
+       1F 0D 14 E8 CE 96 A3 26 3E 39 D3 1E 14 70 E1 F5>)
+(   7,<2025-06-18 10:30:51.519 +0200>,<WIN-NTNU-NO\juliaweg>,<NTNU31234>,<proc2d>,<TopSpin 4.0.7>,
+      <abs1 F1: ABSG = 5 ABSF1 = 110.004 ABSF2 = 9.996
+       data hash MD5: 4K * 1K
+       8D 93 70 04 29 DB 8A B9 33 FC 31 66 CB A0 3F 03>)
+(   8,<2025-06-18 10:30:51.667 +0200>,<WIN-NTNU-NO\juliaweg>,<NTNU31234>,<proc2d>,<TopSpin 4.0.7>,
+      <abs2 F2: ABSG = 5 ABSF1 = 10.087 ABSF2 = -0.6884876
+       data hash MD5: 4K * 1K
+       67 92 BD 96 4B 31 42 22 82 1A 48 9B 53 34 8B D9>)
+##END=
+
+$$ hash MD5
+$$ 29 55 0A 3A 31 BF 51 00 C8 94 7B C9 54 6A E6 96

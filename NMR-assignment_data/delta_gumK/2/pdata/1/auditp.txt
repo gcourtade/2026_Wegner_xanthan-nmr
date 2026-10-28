@@ -1,0 +1,19 @@
+##TITLE= Audit trail, TopSpin 4.0.7
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= juliaweg
+$$ C:\Users\juliaweg\OneDrive - NTNU\Desktop\PhD\NMR\juliaweg(1)\800/delta GumK/2/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2025-09-26T10:18:37.294+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<cprserver>,<TopSpin 4.4.1>,
+      <changed parameter F2 O1 to 3742.35>)
+(   2,<2025-09-26T08:22:05.895+0000>,<DESKTOP-GBO6KH6\nmrsu>,<DESKTOP-GBO6KH6>,<go4>,<TopSpin 4.4.1>,
+      <acquisition in progress>)
+(   3,<2026-08-03 12:59:51.023 +0200>,<WIN-NTNU-NO\juliaweg>,<NTNU31234>,<proc2d>,<TopSpin 4.0.7>,
+      <Start of raw data processing
+       xfb F2: SI = 4K BC_mod = 4 WDW = 4 SSB = 2 FT_mod = 6 PKNL = 1 PHC0 = 89.55 PHC1 = 0 F1: SI = 1K ME_mod = 2 NCOEF = 60 WDW = 4 SSB = 2 FT_mod = 6 FCOR = 0.5
+       data hash MD5: 4K * 1K
+       5F 47 41 DB AE 5C 05 E9 4C 77 47 CF 55 2C 1C 92>)
+##END=
+
+$$ hash MD5
+$$ FC FF 62 17 2C 3E 05 A3 40 D3 26 4D F1 D9 88 4D

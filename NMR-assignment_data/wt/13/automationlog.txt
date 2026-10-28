@@ -1,0 +1,22 @@
+Probe: Currently installed probe not determined!
+ Tmax=348.2 Tmin=278.0 
+TE set to  298.1
+Probe: Currently installed probe not determined!
+ Tmax=348.2 Tmin=278.0 
+TE set to  298.1
+
+ TEMPERATURE adjustment:	Current holder no. 7, previous holder no. 11. Current TE: 298.100, previous TE: 298.100. Time for temperature equilibration needed.
+ teready 300 0.1
+TOPSHIM:  topshim tunea   executed
+/------------ auto_run started at 2025-10-06	15:10:33 --------------/ 
+C:/Users/nmrsu/Documents/data/juliaweg/nmr wt 13 
+Holder: 7 
+Probe: Currently installed probe not determined!
+ Tmax=348.2 Tmin=278.0 
+TE set to  298.1
+
+ TEMPERATURE adjustment:	Neither holder no. (7) nor TE (298.100) have changed from the previous experiment. Skipping TEREADY.
+PULSE ANGLE adjustment:	pulsecal.aal_TS4 executed
+O1 adjustment:	o1calib.bruker_TS4 executed
+RG adjustment:	 RGA executed
+Acquisition started.

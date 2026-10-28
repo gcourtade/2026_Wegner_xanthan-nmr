@@ -1,0 +1,24 @@
+##TITLE= Parameter file, TopSpin 4.4.1
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 409	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH & Co. KG
+##OWNER= nmrsu
+$$ 2025-05-24 02:10:51.644 +0200  nmrsu@DESKTOP-GBO6KH6
+$$ C:/Users/nmrsu/Documents/data/juliaweg/nmr/Xanthan_enzyme_evaluation/26/acqu2s
+$$ process C:\Bruker\TopSpin4.4.1\prog\mod\acqdataserver.exe
+##$ACQT0= 0
+##$BF1= 201.167703506
+##$FnILOOP= 1
+##$FnMODE= 6
+##$NUC1= <13C>
+##$NusJSP= 0
+##$NusT2= 1
+##$NusTD= 400
+##$O1= 20116.7699999871
+##$ProjAngle= 0
+##$SFO1= 201.187820276
+##$SW= 179.999098937204
+##$SW_h= 36213.6263668201
+##$TD= 400
+##END=

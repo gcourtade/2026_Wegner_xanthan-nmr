@@ -1,0 +1,524 @@
+
+
+
+/* auto_run */
+
+/* by Reinhard Wimmer, Aalborg University, Denmark */
+
+/* AU program to conrol automation with many options */
+
+/* usage auto_run */
+/*    auto_run uses loop counters L25-L29 as flags (arguments) :
+ 
+		L25:
+		  2: set O2 equal to O1 (after O1 has been set as determined by L26)
+
+		L26:	0: O1 is taken from the parameter set (no adjustment)
+			1: automated: like "0" for non-water solvents (incl D2O), like "2" for solvents mainly consisting of H2O
+			2: like 4
+			3: exectue macro set_O1 (use only if you have done o1calib.aal on the same sample immediately before)
+			4: o1calib.bruker (automated adjustment of O1 by BRUKER method, saves O1 in macro set_O1 for later use)
+
+		L27: 1: shimming is controlled by ICON-NMR (default)
+		     2: force 1D-topshim before experiment
+		     3: force 3D-topshim, followed by 1D-topshim, before experiment
+		L28:
+			0: no pulsecal, no getprosol
+			1: no pulsecal, only getprosol
+			2: pulsecal
+			3: pulsecal sn
+			4: execute macro set_P1 (contains a getprosol statement written by pulsecal.aal. Only use if you have done pulsecal
+			on that very sample immediately before)
+			5: do 4 first, then run wavemaker (wvm -a)
+			
+		L29:
+			0: no RGA (use onlyfor COSY), RG is set as parameter
+			1: execute RGA prior to measurement 
+
+*/
+
+/* other specialties to be considered
+
+13C-decoupling: control the duration of AQ
+if USERA4 contains the term 'aqmax', then the total length of AQ (acquisition time) is limited
+The user has to pass the maximum allowed AQ as CNST12.
+the automation will check the current AQ set and compare to CNST12. If AQ>CNST12, AQ will be reduced
+OBS: This will not check for the decoupling power, nor decoupling that might occur in the middle of the sequence.
+It only checks the duration of AQ.
+
+
+high temperature (>50C)
+the automation will not allow setting the temperature >50C.
+
+
+DOSY:
+if USERA4 contains the term 'dosy', then 
+xau dosy 5 {CNST11} {TD1} l n n
+is executed.
+5 is the starting gradient strength (in %)
+CNST11 is the maximum gradient strength (in %) to be reached during the DOSY experiment (e.g. 95)
+TD1 is the number of datapoints in the indirect dimension
+l is linear ramp
+n no RGA
+n no aq start
+
+running without lock: 2H-acquisition
+the automation will check whether there is a lock, before starting ZG. Without lock, the acquisition will be skipped.
+In special cases (e.g. 2H-aqcuisition), the spectrum has to be recorded without lock.
+this can be done by including the term 'nolock' into USERA4
+
+z-shim correction:
+due to temperature gradients in the sample, the z-shim given by topshim is not always optimal
+if you know the correction, you can do the following
+if USERA4 contains 'shimcorr' then the value contained in CNST13 is added to the z-shim after topshim and AUTOSHIM is deactivated
+
+*/
+
+/* 
+int get_BST_barcode();
+int set_pulsewidths();
+int set_carrierfrequency();
+int set_RG();
+
+ */
+ 
+/*  #include <inc/bsms_program>  */
+#include <time.h>   
+ 
+char usera4[128], filename[PATH_MAX],message[2048],barcodelog[PATH_MAX],pulsprog[128],autopos[128];
+char *pch;
+int lockstatus,current_holder,i;
+float barcode;
+FILE *logfile;
+
+/* import current date and time */
+/* 		thanks to the community at stackoverflow.com for this piece of code*/
+
+
+char datetime[128];
+time_t now=time(0);
+struct tm tstruct; 
+tstruct=*localtime(&now);
+strftime(datetime,sizeof(datetime),"%Y-%m-%d\t%X",&tstruct);
+ 
+ 
+
+
+GETCURDATA;
+FETCHPAR("USERA4",usera4);
+FETCHPARS("HOLDER",&current_holder);
+
+
+sprintf(filename,"%s",ACQUPATH("automationlog.txt"));
+logfile=fopen(filename,"a");
+fprintf(logfile,"/------------ auto_run started at %s --------------/ \n",datetime);
+fprintf(logfile,"%s %s %d \n", disk, name, expno);
+fprintf(logfile,"Holder: %u \n",current_holder);
+fclose(logfile);
+
+
+
+FETCHPARS("AUTOPOS",autopos);
+/* eliminate the leading text from barcode string */
+for(i=0;i<=8;i++)
+  {
+  	autopos[i]=' ';
+  }
+
+FETCHPAR("PULPROG",pulsprog);
+sprintf(barcodelog, "C:/Users/nmrsu/Documents/%s", "TRD800log.txt");
+logfile=fopen(barcodelog,"a");
+fprintf(logfile,"%s\t",autopos);
+fprintf(logfile,"%s\t",datetime);
+fprintf(logfile,"%s\t%s\t%d\t", disk, name, expno);
+fprintf(logfile,"%u\t%s \n",current_holder,pulsprog);
+fclose(logfile);
+
+XAU("auto_TESET","");
+XAU("auto_TEREADY","");
+
+/*AUERR=shim(curdat);*/
+/*
+AUERR=set_temp(curdat);							temperature corrections are now handled within the EDTE system
+*/
+
+/* AUERR=wobbling(curdat); */     /* this is now done by IconNMR automatically in a solvent-dependent way */
+
+/* check if spectrometer is locked */
+(void)LockInfo( &lockstatus, NULL, NULL);
+if ((lockstatus!=1)  && (strstr(usera4,"nolock")==NULL))  /*  if the spectrometer is not locked AND USERA4 does NOT contain the "nolock" flag, then something is wrong */
+  {
+    sprintf(filename,"%s",ACQUPATH("automationlog.txt"));
+    logfile=fopen(filename,"a");
+
+    fprintf(logfile,"Spectrometer is not locked - attempting to lock again.\n");
+    AUERR=CPR_exec("lock -acqu",WAIT_TERM);
+    AUERR=ssleep(60); /* wait for a full minute, in difficult cases, locking can take its time */
+    (void)LockInfo( &lockstatus, NULL, NULL);
+    if (lockstatus!=1)   /* still no lock */
+      {
+       fprintf(logfile,"Spectrometer could not obtain lock on sample. Skipping further measurements on this sample.\n");
+       fclose(logfile);
+       AUERR=Proc_err(ERROPT_AK_CAN, "Spectrometer could not obtain lock on sample. Skipping further measurements on this sample.\n");
+      }
+     else  /* lock succeeded */
+      {
+      	fprintf(logfile,"Lock succeeded. \n");
+      	fclose(logfile);
+/*       	XAU("auto_lockadjust","");      not neccessary in TS4 */
+      }
+  }
+
+if ((lockstatus==1)  || (strstr(usera4,"nolock")!=NULL))  /*  if the spectrometer is  locked OR USERA4 contains the "nolock" flag, then go on*/
+  {
+  
+    AUERR=set_pulsewidths(curdat);
+
+    /* XAU("auto_lockadjust","");  */
+    /* lockadjust has been removed here, as it is now taken care of by ICON-NMR (and hopefully only upon solvent change) */
+
+    AUERR=set_carrierfrequency(curdat);
+
+    if (strstr(usera4,"dosy")!=NULL)
+      {
+      	AUERR=diffusion_setup(curdat);
+      }
+    
+    if (strstr(usera4,"aqmax")!=NULL)
+      {
+      	AUERR=AQ_setup(curdat);
+      }
+   
+    
+    
+    AUERR=set_RG(curdat);
+
+
+    sprintf(filename,"%s",ACQUPATH("automationlog.txt"));
+    logfile=fopen(filename,"a");
+    fprintf(logfile,"Acquisition started.\n");
+    fclose(logfile);
+
+    ZG;
+    
+    if ((lockstatus!=1)  && (strstr(usera4,"nolock")!=NULL))
+      {
+       STOREPAR("LOCNUC","2H");
+       XCMD("lock -acqu");
+       logfile=fopen(filename,"a");
+       fprintf(logfile,"lock on\n");
+       fclose(logfile);
+      }
+ 
+  }
+
+QUIT
+
+#include <inc/lcUtil> 
+
+
+/*___________________________________________________________________________________________________*/
+
+int shim(const char *curdat)
+
+{
+  int l27,dz,z;
+  float cnst13;
+  char command[100],filename[PATH_MAX],usera4[128];
+  FILE *logfile;
+  
+  GETCURDATA;
+  sprintf(filename,"%s",ACQUPATH("automationlog.txt"));
+  logfile=fopen(filename,"a");
+  FETCHPAR("USERA4",usera4);
+  
+  FETCHPAR("L27",&l27);
+  
+  if (l27==2)   
+    {
+
+    	XAU("auto_TOPSHIM","");
+    	fprintf(logfile,"TOPSHIM 1D executed\n");
+    	/* AUERR=Proc_err(INFO_OPT, " 1D topshim executed."); */
+    }
+   else if (l27==3)
+    {
+    	XAU("auto_TOPSHIM","3d");
+    	XAU("auto_TOPSHIM","");
+     	fprintf(logfile,"TOPSHIM 3D & 1D executed\n");
+   	/* AUERR=Proc_err(INFO_OPT, " 3D & 1D topshim executed."); */
+    }
+    else if (l27==4)
+    {
+    	XAU("auto_TOPSHIM","zrange=0.4 ordmax=3");
+    	XAU("auto_TOPSHIM","zrange=0.8 ordmax=5");
+    	XAU("auto_TOPSHIM","");
+     	fprintf(logfile,"TOPSHIM with increasing zrange and ordmax executed\n");
+   	}
+
+  if (strstr(usera4,"shimcorr")!=NULL)
+    {
+     AUTOSHIM_OFF;
+     FETCHPAR("CNST13",&cnst13);
+     dz=round(cnst13);
+AUERR = GetBsmsIntValue(BSMS_Z, &z);
+AUERR = PutBsmsIntValue(BSMS_Z, &z);
+   /*  PUTBSMSVAL(BSN_Z,z+dz); */
+     fprintf(logfile,"SHIMCORR: added %u to z-shim\n",dz);
+    }
+   else
+    {
+     AUTOSHIM_ON; 
+     fprintf(logfile,"AUTOSHIM on\n");
+    }
+    
+   fclose(logfile);
+   return 0;
+}
+
+/*___________________________________________________________________________________________________*/
+
+int wobbling(const char *curdat)
+
+{
+  char solvent[100],filename[PATH_MAX];
+  FILE *logfile;
+
+  GETCURDATA;
+  sprintf(filename,"%s",ACQUPATH("automationlog.txt"));
+  logfile=fopen(filename,"a");
+ 
+  FETCHPAR("SOLVENT",solvent);
+  
+  if ((strstr(solvent,"H2O+D2O")!=NULL) || (strstr(solvent,"D2O")!=NULL) || (strstr(solvent,"Urine")!=NULL) || (strstr(solvent,"Plasma")!=NULL) || (strstr(solvent,"beer")!=NULL))
+      {
+       XCMD("atma exact");
+       fprintf(logfile,"ATMA exact executed\n");
+        /* AUERR=Proc_err(INFO_OPT, " 'ATMA exact' executed."); */
+      }
+  fclose(logfile);
+  return(0);
+ }
+
+/*___________________________________________________________________________________________________*/
+
+int set_pulsewidths(const char *curdat)
+
+{
+int l28;
+float p1,p3;
+char filename[PATH_MAX];
+FILE *logfile;
+
+GETCURDATA;
+sprintf(filename,"%s",ACQUPATH("automationlog.txt"));
+logfile=fopen(filename,"a");
+fprintf(logfile,"PULSE ANGLE adjustment:\t");
+
+FETCHPAR("L 28",&l28);
+
+if (l28==1)
+  {
+  GETPROSOL;
+  fprintf(logfile,"GETPROSOL executed\n");
+  }
+ else if (l28==2)
+  {
+  XCMD("pulsecal.aal_TS4 quiet");
+  fprintf(logfile,"pulsecal.aal_TS4 executed\n");
+  FETCHPAR("P 1",&p1);
+  STOREPAR("P 1",p1+0.225);     /* Offset in pulse length calibrated by Finn Aachmann November 2024 */
+  }
+ else if (l28==3)
+  {
+  XCMD("pulsecal.aal_TS4 sn quiet")
+  fprintf(logfile,"pulsecal.aal sn executed\n");
+  FETCHPAR("P 1",&p1);
+  STOREPAR("P 1",p1+0.225);     
+  }
+ else if (l28==4)
+  {
+   XMAC("set_P1");
+   fprintf(logfile,"set_P1 executed\n");
+ }
+ else if (l28==5)
+ {
+ 	 XMAC("set_P1");
+   fprintf(logfile,"set_P1 executed\n");
+   XCMD("wvm -a")
+ }
+  
+/* If p1 and p3 are less then 0.1u apart, any line with (center (p1 phX):f1 (p3 phY):f2) will lead to an error and aborted acquisition. This is checked here and "repaired
+by just adding a few us to the proton pulse */
+
+FETCHPAR("P 1",&p1);
+FETCHPAR("P 3",&p3);
+		/* sprintf(text,"before correction:\n p1= %5.2f\t p3= %5.2f \n\n",p1,p3);
+		AUERR=Proc_err(ERROPT_AK_CAN, text); */
+
+if ((abs((p1-p3))<(0.1)) && (p1<p3))	/*p1 is smaller than p3 by less than 10u */
+  {
+  p1=p3-0.1;		/*set p1 to p3-10u */
+  STOREPAR("P 1",p1);
+  fprintf(logfile,"\t P1 modified to prevent p1=p3\n");
+  }
+ else if ((abs((p1-p3))<(0.1)) && (p1>=p3)) /*p1 is equal to or bigger than p3 by less than 10u */
+  {
+  p1=p3+0.1;		/*set p1 to p3+10u */
+  STOREPAR("P 1",p1);
+  fprintf(logfile,"\t P1 modified to prevent p1=p3\n");
+  }  
+		/* FETCHPAR("P 1",&p1);
+		FETCHPAR("P 3",&p3);
+		sprintf(text,"after correction:\n p1= %5.2f\t p3= %5.2f \n\n",p1,p3);
+		AUERR=Proc_err(ERROPT_AK_CAN, text); */
+fclose(logfile);
+return(0);
+}
+
+
+/*___________________________________________________________________________________________________*/
+
+int set_carrierfrequency(const char *curdat)
+
+{
+int l26,l25, AU_err;
+float o1;
+char solvent[100],filename[PATH_MAX];
+FILE *logfile;
+
+GETCURDATA;
+sprintf(filename,"%s",ACQUPATH("automationlog.txt"));
+logfile=fopen(filename,"a");
+fprintf(logfile,"O1 adjustment:\t");
+
+FETCHPAR("L 25",&l25);
+FETCHPAR("L 26",&l26);
+FETCHPAR("SOLVENT",solvent);
+
+
+
+if (l26==2)
+   {
+      	XCMD("o1calib.bruker_TS4");  /* should use o1calib.bruker , but that is sometimes not working properly (O1 not within range of default +/-5Hz */
+        fprintf(logfile,"o1calib.bruker_TS4 executed\n");
+   }
+  else if (l26==3)
+   {
+     XMAC("set_O1");
+     fprintf(logfile,"set_O1 executed\n");
+   }
+  else if ((l26==1) && ((strstr(solvent,"H2O+D2O")!=NULL) || (strstr(solvent,"Urine")!=NULL) || (strstr(solvent,"Plasma")!=NULL) || (strstr(solvent,"D2O")!=NULL)))
+   {
+     XCMD("o1calib.bruker_TS4"); 
+     fprintf(logfile,"o1calib.bruker_TS4 executed\n");
+  }
+  else
+    {
+    fprintf(logfile,"none \n");    	
+    }
+ 
+ if (l25==2)
+   {
+   	FETCHPAR("O 1",&o1);
+   	STOREPAR("O 2",o1);
+   	fprintf(logfile,"O2 set equal to O1\n");
+   }
+ fclose(logfile);
+ return(0);
+}
+
+
+/*___________________________________________________________________________________________________*/
+
+int set_RG(const char *curdat)
+
+{
+int l29;
+char filename[PATH_MAX];
+FILE *logfile;
+
+GETCURDATA;
+sprintf(filename,"%s",ACQUPATH("automationlog.txt"));
+logfile=fopen(filename,"a");
+fprintf(logfile,"RG adjustment:\t");
+
+FETCHPAR("L 29",&l29);
+
+if (l29!=0)   
+  {
+   RGA
+   fprintf(logfile," RGA executed\n");
+  }
+  else
+  {
+  	fprintf(logfile,"none\n");
+  }
+fclose(logfile);
+return(0);
+}
+
+
+
+/*___________________________________________________________________________________________________*/
+
+int diffusion_setup(const char *curdat)
+
+/* enter maximum gradient in CNST 11 */
+{
+int td1;
+float cnst11;
+char command[128];
+char filename[PATH_MAX];
+FILE *logfile;
+
+GETCURDATA; 
+sprintf(filename,"%s",ACQUPATH("automationlog.txt"));
+logfile=fopen(filename,"a");
+
+FETCHPAR1("TD",&td1);
+FETCHPAR("CNST 11",&cnst11);
+if ((cnst11<10) || (cnst11>95))
+  {
+    fprintf(logfile," DOSY setup error: max gradient strength (CNST11) is %5.1f %%. Setting to 50%%.\n",cnst11);
+  	cnst11=50;
+  	STOREPAR("CNST 11",cnst11);
+  }
+sprintf(command,"xau dosy 5 %5.1f %u l n n",cnst11,td1);
+fprintf(logfile," DOSY setup:  xau dosy 5 %5.1f %u l n n\n",cnst11,td1);
+XCMD(command);
+fclose(logfile);
+return(0);
+}
+
+
+/*___________________________________________________________________________________________________*/
+
+int AQ_setup(const char *curdat)
+
+/* enter maximum allowed AQ in CNST 12 */
+{
+float aqmax,aqset;
+char filename[PATH_MAX];
+FILE *logfile;
+
+GETCURDATA;
+sprintf(filename,"%s",ACQUPATH("automationlog.txt"));
+logfile=fopen(filename,"a");
+fprintf(logfile,"AQ checked: ");
+
+FETCHPAR("AQ",&aqset);
+FETCHPAR("CNST 12",&aqmax);
+
+if (aqset>aqmax)
+  {
+  	STOREPAR("AQ",aqmax); 
+    fprintf(logfile,"AQ in parameter set = %5.1f. Value reduced to %5.1f \n",aqset,aqmax);
+  }
+ else
+  {
+  	fprintf(logfile,"AQ in parameter set = %5.1f <= max AQ of %5.1f. No change. \n",aqset,aqmax);
+  }
+}
+  	
+

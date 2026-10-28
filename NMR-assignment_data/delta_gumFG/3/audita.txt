@@ -1,0 +1,27 @@
+##TITLE= Audit trail, TopSpin 4.4.1
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH & Co. KG
+##OWNER= nmrsu
+$$ C:/Users/nmrsu/Documents/data/juliaweg/nmr/deltaFG/3/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2025-06-13T02:18:03.776+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<cprserver>,<TopSpin 4.4.1>,
+      <changed parameter F2 O1 to 3760.06>)
+(   2,<2025-06-13T00:18:45.252+0000>,<DESKTOP-GBO6KH6\nmrsu>,<DESKTOP-GBO6KH6>,<go4>,<TopSpin 4.4.1>,
+      <acquisition in progress>)
+(   3,<2025-06-13T01:20:23.864+0000>,<DESKTOP-GBO6KH6\nmrsu>,<DESKTOP-GBO6KH6>,<go4>,<TopSpin 4.4.1>,
+      <created by zg on 'Avance' (DESKTOP-GBO6KH6) by user 'DESKTOP-GBO6KH6\nmrsu'
+       on data set with UUID 'f7bc251a-47eb-11f0-9757-0030d63cb8b4'
+       started at 2025-06-13 00:18:45.252 +0000, POWCHK enabled, PULCHK disabled,
+       completed at 2025-06-13 01:20:23.863 +0000
+       configuration hash MD5:
+       5A 4B 71 6C C0 FA 7B 52 3B E7 A0 A5 3F E9 5A 7A
+       double data hash MD5: 2K * 400
+       6D 50 E7 87 69 7D 6B FB C5 95 A2 A6 BC EC 80 A7>)
+(   4,<2025-06-13T03:19:48.288+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<xwish3>,<TopSpin 4.4.1>,
+      <ICON-NMR User ID: juliaweg
+       double data hash MD5: 2K * 400
+       6D 50 E7 87 69 7D 6B FB C5 95 A2 A6 BC EC 80 A7>)
+##END=
+
+$$ hash MD5
+$$ 57 FB B1 84 13 95 67 24 1A 1B C7 B0 DD 3A B2 21

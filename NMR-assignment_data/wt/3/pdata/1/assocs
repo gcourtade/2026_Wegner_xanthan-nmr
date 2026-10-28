@@ -1,0 +1,11 @@
+##TITLE= Parameter file, TopSpin 4.0.7
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 101	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH & Co. KG
+##OWNER= nmrsu
+$$ 2026-09-18 12:02:25.746 +0200  WIN-NTNU-NO\juliaweg@NTNU31234
+$$ C:/Users/juliaweg/OneDrive - NTNU/Desktop/PhD/NMR/juliaweg(1)/800/wt/3/pdata/1/assocs
+$$ process C:\Program Files\Bruker\TopSpin\4.0.7\prog\mod\dataserver.exe
+##$MULTDISP= <C:\Users\juliaweg\OneDrive - NTNU\Desktop\PhD\NMR\juliaweg(1)\800\wt\6\pdata\1|C:\Users\juliaweg\OneDrive - NTNU\Desktop\PhD\NMR\juliaweg(1)\800\delta GumK\2\pdata\1>
+##END=

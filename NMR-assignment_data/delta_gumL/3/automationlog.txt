@@ -1,0 +1,14 @@
+/------------ auto_run started at 2025-06-13	01:00:00 --------------/ 
+C:/Users/nmrsu/Documents/data/juliaweg/nmr deltaL 3 
+Holder: 7 
+Probe: Currently installed probe not determined!
+ Tmax=348.2 Tmin=278.0 
+TE set to  298.1
+
+ TEMPERATURE adjustment:	Neither holder no. (7) nor TE (298.100) have changed from the previous experiment. Skipping TEREADY.
+PULSE ANGLE adjustment:	set_P1 executed
+	 P1 modified to prevent p1=p3
+O1 adjustment:	set_O1 executed
+RG adjustment:	 RGA executed
+Acquisition started.
+AQ checked: AQ in parameter set =   0.1 <= max AQ of   0.2. No change. 

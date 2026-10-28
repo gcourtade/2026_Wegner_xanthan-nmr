@@ -1,0 +1,11 @@
+#  Current data set:
+#  Name =             wt   ExpNo =     3   ProcNo =     1
+#  Disk  = C:\Users\juliaweg\OneDrive - NTNU\Desktop\PhD\NMR\juliaweg(1)\800
+#  Baseline = 0    Noise = 0
+
+
+ Region          Integral Normalized Mode
+
+     1    63727000000.00       1.00    a
+     2    20829000000.00       0.33    a
+     3    42867000000.00       0.67    a

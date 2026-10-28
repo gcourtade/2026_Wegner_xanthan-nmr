@@ -1,0 +1,16 @@
+##TITLE= Parameter file, TopSpin 4.4.1
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 2	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH & Co. KG
+##OWNER= nmrsu
+$$ 2025-09-26 09:59:26.158 +0200  nmrsu@DESKTOP-GBO6KH6
+$$ C:/Bruker/TopSpin4.4.1/prog/curdir/changer/inmrchanger/May08-2025-0929-agnesbp/7/7.611/data/nmr/delta GumK/3/pdata/1/outd
+$$ process C:\Bruker\TopSpin4.4.1\prog\mod\edparproc.exe
+##$CURPLOT= <Cups-PDF>
+##$CURPRIN= <$Cups-PDF>
+##$DFORMAT= <normdp>
+##$LAYOUT= <+/2D_inv.xwp>
+##$LFORMAT= <normlp>
+##$PFORMAT= <normpl>
+##END=

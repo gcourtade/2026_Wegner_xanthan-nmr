@@ -1,0 +1,32 @@
+/****************************************************************/
+/*  proc_prof1d         16.07.2007                              */
+/****************************************************************/
+/*  Short Description :                                         */
+/*  AU program for 1D data processing.                          */
+/****************************************************************/
+/*  Keywords :                                                  */
+/*  profiling, processing                                       */
+/****************************************************************/
+/*  Description/Usage :                                         */
+/*  AU program for data acquisition with baselinefilter.        */
+/*  The lockphase is optimized, a pulsecalibration is performed.*/
+/****************************************************************/
+/*  Author(s) :                                                 */
+/*  Name            : Ulrich Braumann                           */
+/*  Organisation    : Bruker BioSpin GmbH                       */
+/*  Email           : ulrich.braumann@bruker-biospin.de         */
+/****************************************************************/
+/*  Name        Date    Modification:                           */
+/*  eub         070110  created                                 */
+/*  rke         070716  save param SR                           */
+/****************************************************************/
+/*
+$Id:$
+*/
+
+GETCURDATA
+
+XCMD("apk0.noe 1");
+XCMD("saveprofpars sr");
+
+QUIT

@@ -1,0 +1,8 @@
+cycles,CX_Mw,CX_Mw_std,CX_Rg,CX_Rg_std,WT_Mw,WT_Mw_std,WT_Rg,WT_Rg_std,dL_Mw,dL_Mw_std,dL_Rg,dL_Rg_std,dFG_Mw,dFG_Mw_std,dFG_Rg,dFG_Rg_std,dFGL_Mw,dFGL_Mw_std,dFGL_Rg,dFGL_Rg_std,dK_Mw,dK_Mw_std,dK_Rg,dK_Rg_std,dI_Mw,dI_Mw_std,dI_Rg,dI_Rg_std
+0,1792.13333333333,57.1640038252512,127.866666666667,6,4100,200,181,4,3420,30,138,1,3500,100,145,2,12600,100,307,4,nan,nan,nan,,nan,nan,nan,
+1,nan,nan,nan,,nan,nan,nan,,770,20,64.5,0.4,1710,60,57.5,0.2,1000,30,57.3,0.1,nan,nan,nan,,nan,nan,nan,
+2,nan,nan,nan,,950,10,57,1,nan,nan,nan,,nan,nan,nan,,nan,nan,nan,,nan,nan,nan,,nan,nan,nan,
+3,939.666666666667,5.68624070307733,68.8,0.9,nan,nan,nan,,nan,nan,nan,,nan,nan,nan,,nan,nan,nan,,nan,nan,nan,,nan,nan,nan,
+5,818.666666666667,6.06987094865561,66.5666666666667,0.3,652,3,37.4,0.9,420,3,42.5,0.3,860,30,31.4,0.5,557.0,0.7,35.2,0.2,nan,nan,nan,,nan,nan,nan,
+7,738.266666666667,9.19365723383969,61.8666666666667,0.7,nan,nan,nan,,nan,nan,nan,,nan,nan,nan,,nan,nan,nan,,nan,nan,nan,,nan,nan,nan,
+10,663.866666666667,3.23934149686837,55.7333333333333,0.5,517,9,30.9,0.6,330,2,35.15,0.07,589,8,27.2,0.4,452.9,0.5,30.1,0.4,850,30,28.3,0.3,523,7,30.4,0.2

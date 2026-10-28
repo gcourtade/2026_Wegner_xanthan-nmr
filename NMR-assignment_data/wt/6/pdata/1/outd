@@ -1,0 +1,16 @@
+##TITLE= Parameter file, TopSpin 4.4.1
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH & Co. KG
+##OWNER= nmrsu
+$$ 2025-05-23 15:37:15.234 +0200  nmrsu@DESKTOP-GBO6KH6
+$$ C:/Bruker/TopSpin4.4.1/prog/curdir/changer/inmrchanger/May08-2025-0929-agnesbp/25/25.568/data/nmr/Xanthan_enzyme_evaluation/4/pdata/1/outd
+$$ process C:\Bruker\TopSpin4.4.1\prog\mod\xwish3.exe
+##$CURPLOT= <Cups-PDF>
+##$CURPRIN= <$Cups-PDF>
+##$DFORMAT= <normdp>
+##$LAYOUT= <+/2D_inv.xwp>
+##$LFORMAT= <normlp>
+##$PFORMAT= <normpl>
+##END=

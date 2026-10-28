@@ -1,0 +1,15 @@
+
+ Current data set:
+ Name =             wt   ExpNo =     3   ProcNo =     1
+ Disk  = C:\Users\juliaweg\OneDrive - NTNU\Desktop\PhD\NMR\juliaweg(1)\800
+ Baseline = 0    Noise = 0
+
+   #  SI_F1  row1  row2  row1(ppm)  row2(ppm)  abs. Int.    Integral    Mode
+      SI_F2  col1  col2  col1(ppm)  col2(ppm)
+
+  1   1024   411   419   69.94089   69.18122  6.3727e+10      15194   a
+      4096  2374  2399    3.84552    3.77946
+  2   1024   411   417   69.94089   69.33732  2.0829e+10     4966.1   a
+      4096  2401  2422    3.77232    3.71876
+  3   1024   394   400   71.65793   71.06477  4.2867e+10      10220   a
+      4096  2397  2421    3.78363    3.71995

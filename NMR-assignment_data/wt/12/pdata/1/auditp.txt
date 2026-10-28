@@ -1,0 +1,43 @@
+##TITLE= Audit trail, TopSpin 4.0.7
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= juliaweg
+$$ C:\Users\juliaweg\OneDrive - NTNU\Desktop\PhD\NMR\juliaweg(1)\800/wt/12/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2025-05-24T12:54:23.822+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<cprserver>,<TopSpin 4.4.1>,
+      <changed parameter 1 D 9 to 0.012000000>)
+$$ C:/Bruker/TopSpin4.4.1/prog/curdir/changer/inmrchanger/May08-2025-0929-agnesbp/25/25.615/data/nmr/wt/12/audita.txt
+(   2,<2025-05-24T12:54:47.286+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<cprserver>,<TopSpin 4.4.1>,
+      <changed parameter 1 D 9 to 0.100000000>)
+$$ C:/Users/nmrsu/Documents/data/juliaweg/nmr/wt/12/audita.txt
+(   3,<2025-05-26T18:35:10.723+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<cprserver>,<TopSpin 4.4.1>,
+      <changed parameter F2 O1 to 3760.13>)
+(   4,<2025-05-26T16:35:37.758+0000>,<DESKTOP-GBO6KH6\nmrsu>,<DESKTOP-GBO6KH6>,<go4>,<TopSpin 4.4.1>,
+      <acquisition in progress>)
+(   5,<2025-05-26T18:40:55.933+0000>,<DESKTOP-GBO6KH6\nmrsu>,<DESKTOP-GBO6KH6>,<go4>,<TopSpin 4.4.1>,
+      <created by zg on 'Avance' (DESKTOP-GBO6KH6) by user 'DESKTOP-GBO6KH6\nmrsu'
+       on data set with UUID '74304446-3a4f-11f0-a6b8-0030d63cb8b4'
+       started at 2025-05-26 16:35:37.758 +0000, POWCHK enabled, PULCHK disabled,
+       completed at 2025-05-26 18:40:55.932 +0000
+       configuration hash MD5:
+       5A 4B 71 6C C0 FA 7B 52 3B E7 A0 A5 3F E9 5A 7A
+       double data hash MD5: 2K * 512
+       CA C2 B8 52 2E 71 A6 7F 2E C7 F8 A0 D3 18 7A 3F>)
+(   6,<2025-05-26T20:40:38.069+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<xwish3>,<TopSpin 4.4.1>,
+      <ICON-NMR User ID: juliaweg
+       double data hash MD5: 2K * 512
+       CA C2 B8 52 2E 71 A6 7F 2E C7 F8 A0 D3 18 7A 3F>)
+(   7,<2025-06-02 15:50:29.098 +0200>,<WIN-NTNU-NO\juliaweg>,<NTNU31234>,<proc2d>,<TopSpin 4.0.7>,
+      <Start of raw data processing
+       xfb F2: SI = 4K WDW = 4 SSB = 2 FT_mod = 6 PKNL = 1 PHC0 = 115.1726 PHC1 = -26.7 F1: SI = 1K ME_mod = 2 NCOEF = 32 WDW = 4 SSB = 2 FT_mod = 4 FCOR = 1 PHC0 = 90 PHC1 = -180
+       data hash MD5: 4K * 1K
+       80 A8 19 63 35 5E E5 A3 03 96 42 05 DD 13 1E 74>)
+$$ C:\Users\juliaweg\OneDrive - NTNU\Desktop\PhD\NMR\juliaweg(1)\800/wt/12/pdata/1/auditp.txt
+(   8,<2025-06-02 15:53:28.621 +0200>,<WIN-NTNU-NO\juliaweg>,<NTNU31234>,<proc2d>,<TopSpin 4.0.7>,
+      <pk2 fgphup F2: PHC0 = 55.16172 PHC1 = 28.8
+       data hash MD5: 4K * 1K
+       67 CE DD A1 BE 8F 73 00 1F E3 D2 DA 5F 38 A0 BF>)
+##END=
+
+$$ hash MD5
+$$ FC B4 2D 9C 40 89 0C 70 06 C9 8B 7E 1B 06 AB 0C

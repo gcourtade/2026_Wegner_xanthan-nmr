@@ -1,0 +1,28 @@
+##TITLE= Parameter file, TopSpin 4.0.7
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 18	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH & Co. KG
+##OWNER= nmrsu
+$$ 2025-09-26 11:46:37.570 +0200  WIN-NTNU-NO\juliaweg@NTNU31234
+$$ C:/Users/juliaweg/OneDrive - NTNU/Desktop/PhD/NMR/juliaweg(1)/800/delta GumK/2/pdata/1/clevels
+$$ process C:\Program Files\Bruker\TopSpin\4.0.7\prog\mod\dataserver.exe
+##$LEVELS= (0..255)
+-18728250000 -10404590000 -5780325203.3 -3211291779.6 -1784050988.7 -991139438.2
+-550633021.2 -305907234 305907234 550633021.2 991139438.2 1784050988.7
+3211291779.6 5780325203.3 10404590000 18728250000 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+##$LEVSIGN= 3
+##$MAXLEV= 8
+##$METHOD= 0
+##$NEGBASE= -305907234
+##$NEGINCR= 1.8
+##$POSBASE= 305907234
+##$POSINCR= 1.8
+##END=

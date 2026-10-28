@@ -1,0 +1,46 @@
+##TITLE= Audit trail, TopSpin 4.4.1
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH & Co. KG
+##OWNER= nmrsu
+$$ C:/Users/nmrsu/Documents/data/juliaweg/nmr/delta GumK/1/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2025-09-26T08:19:26.364+0000>,<DESKTOP-GBO6KH6\nmrsu>,<DESKTOP-GBO6KH6>,<go4>,<TopSpin 4.4.1>,
+      <acquisition in progress>)
+$$ C:/Users/nmrsu/Documents/data/juliaweg/nmr/delta GumK/1/audita.txt
+(   2,<2025-09-26T08:20:58.377+0000>,<DESKTOP-GBO6KH6\nmrsu>,<DESKTOP-GBO6KH6>,<go4>,<TopSpin 4.4.1>,
+      <created by zg on 'Avance' (DESKTOP-GBO6KH6) by user 'DESKTOP-GBO6KH6\nmrsu'
+       on data set with UUID '83d990ce-9ab1-11f0-bd61-0030d63cb8b4'
+       started at 2025-09-26 08:19:26.363 +0000, POWCHK enabled, PULCHK disabled,
+       completed at 2025-09-26 08:20:58.376 +0000
+       configuration hash MD5:
+       5A 4B 71 6C C0 FA 7B 52 3B E7 A0 A5 3F E9 5A 7A
+       double data hash MD5: 64K
+       22 3D E2 8B 75 4C 42 42 C3 EC E0 60 F6 0E 76 BF>)
+(   3,<2025-09-26T10:17:36.028+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<xwish3>,<TopSpin 4.4.1>,
+      <ICON-NMR User ID: juliaweg
+       double data hash MD5: 64K
+       22 3D E2 8B 75 4C 42 42 C3 EC E0 60 F6 0E 76 BF>)
+(   4,<2025-09-26T10:17:38.121+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<proc1d>,<TopSpin 4.4.1>,
+      <Start of raw data processing
+       efp LB = 0.3 FT_mod = 6 PKNL = 1 PHC0 = 0 PHC1 = 0 SI = 64K
+       fid double data hash MD5: 64K
+       22 3D E2 8B 75 4C 42 42 C3 EC E0 60 F6 0E 76 BF
+       data hash MD5: 64K
+       B6 42 D8 FB 54 AF 25 1D F6 2F C7 30 2F 3A 3D 75>)
+$$ C:/Users/nmrsu/Documents/data/juliaweg/nmr/delta GumK/1/pdata/1/auditp.txt
+(   5,<2025-09-26T10:17:38.215+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<proc1d>,<TopSpin 4.4.1>,
+      <pk PHC0 = 167.0911 PHC1 = 0
+       data hash MD5: 64K
+       1B A1 91 AA 9F 84 F8 05 8A C4 FD 94 24 BC 22 9F>)
+(   6,<2025-09-26T10:17:38.371+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<sref>,<TopSpin 4.4.1>,
+      <sref
+       data hash MD5: 64K
+       1B A1 91 AA 9F 84 F8 05 8A C4 FD 94 24 BC 22 9F>)
+(   7,<2025-09-26T10:17:38.669+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<xwish3>,<TopSpin 4.4.1>,
+      <ICON-NMR User ID: juliaweg
+       data hash MD5: 64K
+       1B A1 91 AA 9F 84 F8 05 8A C4 FD 94 24 BC 22 9F>)
+##END=
+
+$$ hash MD5
+$$ 78 86 A7 68 7A 09 80 6D 5D 31 6C 67 B8 0E 94 25

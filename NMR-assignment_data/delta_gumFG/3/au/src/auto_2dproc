@@ -1,0 +1,44 @@
+/* processes 2D spectra crudely 
+
+no plotting */
+
+char options4[PATH_MAX];
+short apk_flag=1, noabs_flag=0,sref_flag=0;
+char options2[PATH_MAX],TempStr[256];
+int td1;
+
+GETCURDATA;
+
+FETCHPAR("USERP2",options2);
+
+GETCURDATA;
+
+FETCHPAR("USERA4",options4);
+
+if ((strstr(options4, "dosy") != NULL) || (strstr(options4, "DOSY") !=NULL))
+      {
+         FETCHPAR1("TD",&td1);
+         STOREPAR1("SI",td1);
+         XF2; 
+         XCMD("setdiffparm");
+       }
+     else 
+			{
+       XFB;
+       XCMD("apk2d");
+       XFB;
+			}
+
+/* if ((strstr(options4, "apk2d") != NULL) || (strstr(options4, "apk2d") !=NULL))
+    {
+    	APK2D;
+    	XFB;
+    }
+
+if ((strstr(options, "abs") != NULL) || (strstr(options, "ABS") !=NULL))
+    {
+    	ABS2;
+    	ABS1;
+    }
+*/
+QUIT

@@ -1,0 +1,24 @@
+##TITLE= Parameter file, TopSpin 4.4.1
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 14	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH & Co. KG
+##OWNER= nmrsu
+$$ 2025-06-13 01:00:01.820 +0200  nmrsu@DESKTOP-GBO6KH6
+$$ C:/Users/nmrsu/Documents/data/juliaweg/nmr/deltaL/3/acqu2
+$$ process C:\Bruker\TopSpin4.4.1\prog\mod\dataserver.exe
+##$ACQT0= 0
+##$BF1= 201.167703506
+##$FnILOOP= 0
+##$FnMODE= 6
+##$NUC1= <13C>
+##$NusJSP= 0
+##$NusT2= 1
+##$NusTD= 0
+##$O1= 12070.06
+##$ProjAngle= 0
+##$SFO1= 201.179773566
+##$SW= 100.001999880967
+##$SW_h= 20118.3796922001
+##$TD= 400
+##END=

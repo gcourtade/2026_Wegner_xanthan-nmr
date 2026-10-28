@@ -1,0 +1,65 @@
+##TITLE= Audit trail, TopSpin 4.4.1
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH & Co. KG
+##OWNER= nmrsu
+$$ C:/Users/nmrsu/Documents/data/juliaweg/nmr/wt/13/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2025-10-06T13:13:27.225+0000>,<DESKTOP-GBO6KH6\nmrsu>,<DESKTOP-GBO6KH6>,<go4>,<TopSpin 4.4.1>,
+      <acquisition in progress>)
+$$ C:/Users/nmrsu/Documents/data/juliaweg/nmr/wt/13/audita.txt
+(   2,<2025-10-06T13:14:58.423+0000>,<DESKTOP-GBO6KH6\nmrsu>,<DESKTOP-GBO6KH6>,<go4>,<TopSpin 4.4.1>,
+      <created by zg on 'Avance' (DESKTOP-GBO6KH6) by user 'DESKTOP-GBO6KH6\nmrsu'
+       on data set with UUID '3ec40232-a2b6-11f0-8a5f-0030d63cb8b4'
+       started at 2025-10-06 13:13:27.225 +0000, POWCHK enabled, PULCHK disabled,
+       completed at 2025-10-06 13:14:58.422 +0000
+       configuration hash MD5:
+       5A 4B 71 6C C0 FA 7B 52 3B E7 A0 A5 3F E9 5A 7A
+       double data hash MD5: 64K
+       4F 01 EA ED 62 7B 69 CF 88 64 BF F2 57 F0 EB F6>)
+(   3,<2025-10-06T15:13:50.884+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<xwish3>,<TopSpin 4.4.1>,
+      <ICON-NMR User ID: juliaweg
+       double data hash MD5: 64K
+       4F 01 EA ED 62 7B 69 CF 88 64 BF F2 57 F0 EB F6>)
+(   4,<2025-10-06T15:13:53.093+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<proc1d>,<TopSpin 4.4.1>,
+      <Start of raw data processing
+       efp LB = 0.3 FT_mod = 6 PKNL = 1 PHC0 = 0 PHC1 = 0 SI = 64K
+       fid double data hash MD5: 64K
+       4F 01 EA ED 62 7B 69 CF 88 64 BF F2 57 F0 EB F6
+       data hash MD5: 64K
+       37 8F 5B F7 35 D4 16 4B 7A 2C EB B5 39 43 35 47>)
+$$ C:/Users/nmrsu/Documents/data/juliaweg/nmr/wt/13/pdata/1/auditp.txt
+(   5,<2025-10-06T15:13:53.223+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<proc1d>,<TopSpin 4.4.1>,
+      <pk PHC0 = 166.2671 PHC1 = 0
+       data hash MD5: 64K
+       96 6C 6A BB D4 25 85 79 C2 B4 CC CC BF C3 5C B5>)
+(   6,<2025-10-06T15:13:53.288+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<sref>,<TopSpin 4.4.1>,
+      <sref
+       data hash MD5: 64K
+       96 6C 6A BB D4 25 85 79 C2 B4 CC CC BF C3 5C B5>)
+(   7,<2025-10-06T15:13:53.726+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<xwish3>,<TopSpin 4.4.1>,
+      <ICON-NMR User ID: juliaweg
+       data hash MD5: 64K
+       96 6C 6A BB D4 25 85 79 C2 B4 CC CC BF C3 5C B5>)
+(   8,<2025-10-06T15:14:03.142+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<proc1d>,<TopSpin 4.4.1>,
+      <Start of raw data processing
+       em LB = 0.3 SI = 64K
+       fid double data hash MD5: 64K
+       4F 01 EA ED 62 7B 69 CF 88 64 BF F2 57 F0 EB F6
+       data hash MD5: 64K
+       33 9E 6D 11 52 0D ED 5C 5C CC 14 17 6D 27 97 5E>)
+(   9,<2025-10-06T15:14:03.225+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<proc1d>,<TopSpin 4.4.1>,
+      <ft FT_mod = 6 PKNL = 1 SI = 64K
+       data hash MD5: 64K
+       E6 12 45 EE 15 AC EC A5 65 91 47 A8 59 B4 6D 11>)
+(  10,<2025-10-06T15:14:03.413+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<proc1d>,<TopSpin 4.4.1>,
+      <apk
+       data hash MD5: 64K
+       87 A3 50 00 62 38 07 B9 55 4D D1 14 DE 51 9A 3E>)
+(  11,<2025-10-06T15:14:03.492+0200>,<nmrsu>,<DESKTOP-GBO6KH6>,<proc1d>,<TopSpin 4.4.1>,
+      <abs n ABSG = 3
+       data hash MD5: 64K
+       EB 9E DD BA AB 35 51 34 C2 63 1D 8F E1 65 06 79>)
+##END=
+
+$$ hash MD5
+$$ 3E 7C 47 30 A9 F8 87 4F C8 DE BF 7F C3 1A 58 5E
