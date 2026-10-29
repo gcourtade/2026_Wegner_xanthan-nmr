@@ -9,7 +9,7 @@
    id="svg1"
    sodipodi:docname="Figure2.svg"
    inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
-   inkscape:export-filename="/home/courtade/Documents/Sync/2025_Julian/biorxiv/Fig2.pdf"
+   inkscape:export-filename="../../Documents/Sync/2025_Julian/biorxiv/Fig2.pdf"
    inkscape:export-xdpi="300"
    inkscape:export-ydpi="300"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,11 +26,11 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="2"
-     inkscape:cx="314.5"
-     inkscape:cy="167"
-     inkscape:window-width="1920"
-     inkscape:window-height="1011"
+     inkscape:zoom="4"
+     inkscape:cx="516.25"
+     inkscape:cy="275.75"
+     inkscape:window-width="3840"
+     inkscape:window-height="1531"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -2458,17 +2458,6 @@
        xml:space="preserve"
        style="font-size:2.82223px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';writing-mode:lr-tb;direction:ltr;opacity:1;fill:#000000;stroke-width:0.264583"
        x="123.10298"
-       y="60.672852"
-       id="text1"><tspan
-         sodipodi:role="line"
-         id="tspan1"
-         style="opacity:0.635;stroke-width:0.264583"
-         x="123.10298"
-         y="60.672852">α-mannose</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:2.82223px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';writing-mode:lr-tb;direction:ltr;opacity:1;fill:#000000;stroke-width:0.264583"
-       x="123.10298"
        y="64.277069"
        id="text2"><tspan
          sodipodi:role="line"
@@ -2476,5 +2465,16 @@
          style="stroke-width:0.264583"
          x="123.10298"
          y="64.277069">α-mannose Ac </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';writing-mode:lr-tb;direction:ltr;opacity:1;fill:#000000;stroke-width:0.264583"
+       x="123.10298"
+       y="60.672852"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="stroke-width:0.264583"
+         x="123.10298"
+         y="60.672852">α-mannose </tspan></text>
   </g>
 </svg>
