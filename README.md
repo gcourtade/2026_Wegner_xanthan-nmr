@@ -18,15 +18,15 @@ Citation:
 |                  | `3` | 13C HSQC (`hsqcedetgpsisp2.3`) |
 | **delta_gumFGL**| `2` | 1D 1H (`noesygppr1d`) |
 |                  | `3` | 13C HSQC (`hsqcedetgpsisp2.3`) |
-| **delta_gumI**  | `3` | 13C HSQC (`hsqcedetgpsisp2.3`) |
-|                  | `4` | 1D 1H (`noesygppr1d`) |
+| **delta_gumI**  | `4` |  1D 1H (`noesygppr1d`)  |
+|                  | `3` | 13C HSQC (`hsqcedetgpsisp2.3`) |
 | **delta_gumK**  | `1` | 1D 1H (`noesygppr1d`) |
 |                  | `2` | 13C HSQC (`hsqcedetgpsisp2.3`) |
 |                  | `3` | HMBC (`hmbcetgpl3nd`) |
 | **delta_gumL**  | `2` | 1D 1H (`noesygppr1d`) |
 |                  | `3` | 13C HSQC (`hsqcedetgpsisp2.3`) |
-| **wt**          | `12` | 2D DIPSI‑2 (`dipsi2gpphpr`) |
-|                  | `13` | 1D 1H (`noesygppr1d`) |
+| **wt**         | `13` | 1D 1H (`noesygppr1d`) |
+|                  | `12` | 2D DIPSI‑2 (`dipsi2gpphpr`) |
 |                  | `16` | 2D NOESY (`noesygpphpr`) |
 |                  | `3`  | 13C HSQC (`hsqcedetgpsisp2.3`) |
 |                  | `6`  | HMBC (`hmbcetgpl3nd`) |
